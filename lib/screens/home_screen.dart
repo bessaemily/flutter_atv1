@@ -42,7 +42,6 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       body: Column(
         children: [
-          // Filtro por categoria
           Container(
             padding: const EdgeInsets.all(16.0),
             child: SingleChildScrollView(
@@ -58,7 +57,6 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           
-          // Lista de questões
           Expanded(
             child: ListView.builder(
               padding: const EdgeInsets.all(16.0),

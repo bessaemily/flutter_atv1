@@ -13,7 +13,6 @@ class Question {
     required this.difficulty,
   });
 
-  // Método para converter para JSON (útil para persistência futura)
   Map<String, dynamic> toJson() {
     return {
       'id': id,
@@ -24,7 +23,6 @@ class Question {
     };
   }
 
-  // Método para criar a partir de JSON
   factory Question.fromJson(Map<String, dynamic> json) {
     return Question(
       id: json['id'],

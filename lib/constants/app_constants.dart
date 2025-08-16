@@ -1,16 +1,13 @@
 import 'package:flutter/material.dart';
 
 class AppConstants {
-  // Cores do tema
-  static const Color primaryColor = Color(0xFF1565C0); // Colors.blue[800]
-  static const Color secondaryColor = Color(0xFFBBDEFB); // Colors.blue[100]
+  static const Color primaryColor = Color(0xFF1565C0);
+  static const Color secondaryColor = Color(0xFFBBDEFB);
   
-  // Cores de dificuldade
   static const Color easyColor = Colors.green;
   static const Color mediumColor = Colors.orange;
   static const Color hardColor = Colors.red;
   
-  // Textos
   static const String appTitle = 'Atividade Dart - 28 Questões';
   static const String homeTitle = 'Atividade Dart - 28 Questões';
   static const String solutionComingSoon = 'Solução em breve...';
@@ -20,17 +17,14 @@ class AppConstants {
   static const String solutionTitle = 'Solução:';
   static const String allCategoriesFilter = 'Todas';
   
-  // Espaçamentos
   static const double defaultPadding = 16.0;
   static const double smallPadding = 8.0;
   static const double largePadding = 24.0;
   
-  // Tamanhos
   static const double cardElevation = 4.0;
   static const double borderRadius = 12.0;
   static const double avatarRadius = 25.0;
   
-  // Duração de animações
   static const Duration defaultAnimationDuration = Duration(milliseconds: 300);
 }
 

@@ -11,40 +11,32 @@ class QuestionDetailScreen extends StatefulWidget {
 }
 
 class _QuestionDetailScreenState extends State<QuestionDetailScreen> {
-  // Controladores para os campos de texto da questão 3
   final TextEditingController _numero1Controller = TextEditingController();
   final TextEditingController _numero2Controller = TextEditingController();
   String _resultadoCalculos = '';
   bool _mostrarResultado = false;
 
-  // Controlador para a questão 4
   final TextEditingController _numeroController = TextEditingController();
   String _resultadoConversao = '';
   bool _mostrarResultadoConversao = false;
 
-  // Controlador para a questão 5
   final TextEditingController _numeroParImparController = TextEditingController();
   String _resultadoParImpar = '';
   bool _mostrarResultadoParImpar = false;
 
-  // Controlador para a questão 6
   final TextEditingController _diaSemanaController = TextEditingController();
   String _resultadoSwitchCase = '';
   bool _mostrarResultadoSwitchCase = false;
 
-  // Controlador para a questão 7
   String _resultadoLoopFor = '';
   bool _mostrarResultadoLoopFor = false;
 
-  // Controlador para a questão 8
   String _resultadoLoopWhile = '';
   bool _mostrarResultadoLoopWhile = false;
 
-  // Controlador para a questão 9
   String _resultadoLista = '';
   bool _mostrarResultadoLista = false;
 
-  // Controlador para a questão 10
   String _resultadoMapa = '';
   bool _mostrarResultadoMapa = false;
 
@@ -59,7 +51,6 @@ class _QuestionDetailScreenState extends State<QuestionDetailScreen> {
   }
 
   String _runQuestion2Example() {
-    // Simulando a execução do código da questão 2 - apenas os 4 tipos básicos
     int numeroInteiro = 42;
     double numeroDecimal = 3.14159;
     String texto = "Olá, Dart!";
@@ -133,13 +124,10 @@ class _QuestionDetailScreenState extends State<QuestionDetailScreen> {
     }
 
     try {
-      // Tentando converter a entrada para double primeiro
       double numeroDouble = double.parse(texto);
       
-      // Conversão de double para int (trunca a parte decimal)
       int numeroInt = numeroDouble.toInt();
       
-      // Conversão de int de volta para double
       double intParaDouble = numeroInt.toDouble();
       
       String output = '';
@@ -183,10 +171,8 @@ class _QuestionDetailScreenState extends State<QuestionDetailScreen> {
     }
 
     try {
-      // Convertendo para int (arredondando se necessário)
       int numero = double.parse(texto).round();
       
-      // Verificando se é par ou ímpar
       bool ehPar = numero % 2 == 0;
       
       String output = '';
@@ -218,7 +204,6 @@ class _QuestionDetailScreenState extends State<QuestionDetailScreen> {
       return;
     }
 
-    // Normalizando entrada (removendo acentos e convertendo para minúsculas)
     String diaNormalizado = texto
         .replaceAll('á', 'a')
         .replaceAll('é', 'e')
@@ -227,8 +212,6 @@ class _QuestionDetailScreenState extends State<QuestionDetailScreen> {
     String mensagem;
     String categoria;
     String dica;
-
-    // Switch case para verificar o dia da semana
     switch (diaNormalizado) {
       case 'domingo':
         mensagem = 'Domingo é dia de descanso!';
@@ -307,7 +290,6 @@ class _QuestionDetailScreenState extends State<QuestionDetailScreen> {
     output += '}\n\n';
     output += 'Saída do programa:\n';
     
-    // Simulando a execução do loop for
     for (int i = 1; i <= 10; i++) {
       output += 'Número: $i\n';
     }
@@ -330,7 +312,6 @@ class _QuestionDetailScreenState extends State<QuestionDetailScreen> {
     output += 'print("A soma dos números de 1 a 100 é: \$soma");\n\n';
     output += 'Saída do programa:\n';
     
-    // Simulando a execução do loop while
     int i = 1;
     int soma = 0;
     while (i <= 100) {
@@ -364,7 +345,6 @@ class _QuestionDetailScreenState extends State<QuestionDetailScreen> {
     output += '}\n\n';
     output += 'Saída do programa:\n';
     
-    // Simulando a execução da lista de frutas
     List<String> frutas = [
       "Maçã",
       "Banana", 
@@ -404,7 +384,6 @@ class _QuestionDetailScreenState extends State<QuestionDetailScreen> {
     output += '}\n\n';
     output += 'Saída do programa:\n';
     
-    // Simulando a execução do mapa
     Map<String, int> pessoas = {
       "João": 25,
       "Maria": 30,
@@ -423,7 +402,6 @@ class _QuestionDetailScreenState extends State<QuestionDetailScreen> {
     output += 'Chaves (nomes): ${pessoas.keys.join(", ")}\n';
     output += 'Valores (idades): ${pessoas.values.join(", ")}\n';
     
-    // Calculando a idade média
     double idadeMedia = pessoas.values.reduce((a, b) => a + b) / pessoas.length;
     output += 'Idade média: ${idadeMedia.toStringAsFixed(1)} anos';
 
@@ -465,7 +443,6 @@ class _QuestionDetailScreenState extends State<QuestionDetailScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Cabeçalho com informações da questão
             Card(
               elevation: 4,
               child: Padding(
@@ -553,7 +530,6 @@ class _QuestionDetailScreenState extends State<QuestionDetailScreen> {
             
             const SizedBox(height: 24),
             
-            // Descrição da questão
             const Text(
               'Descrição da Questão:',
               style: TextStyle(
@@ -578,7 +554,6 @@ class _QuestionDetailScreenState extends State<QuestionDetailScreen> {
             
             const SizedBox(height: 24),
             
-            // Exemplo da questão 2 (exibido diretamente)
             if (widget.question.id == 2) ...[
               const Text(
                 'Exemplo de Execução:',
@@ -608,7 +583,6 @@ class _QuestionDetailScreenState extends State<QuestionDetailScreen> {
               const SizedBox(height: 24),
             ],
 
-            // Exemplo da questão 3 (interface interativa)
             if (widget.question.id == 3) ...[
               const Text(
                 'Digite os números para calcular:',
@@ -619,7 +593,6 @@ class _QuestionDetailScreenState extends State<QuestionDetailScreen> {
               ),
               const SizedBox(height: 16),
               
-              // Campos de entrada
               Card(
                 elevation: 2,
                 child: Padding(
@@ -672,7 +645,6 @@ class _QuestionDetailScreenState extends State<QuestionDetailScreen> {
                 ),
               ),
               
-              // Resultado dos cálculos
               if (_mostrarResultado) ...[
                 const SizedBox(height: 16),
                 const Text(
@@ -704,7 +676,6 @@ class _QuestionDetailScreenState extends State<QuestionDetailScreen> {
               const SizedBox(height: 24),
             ],
 
-            // Exemplo da questão 4 (interface interativa)
             if (widget.question.id == 4) ...[
               const Text(
                 'Digite um número para realizar conversões de tipos:',
@@ -715,7 +686,6 @@ class _QuestionDetailScreenState extends State<QuestionDetailScreen> {
               ),
               const SizedBox(height: 16),
               
-              // Campo de entrada
               Card(
                 elevation: 2,
                 child: Padding(
@@ -759,7 +729,6 @@ class _QuestionDetailScreenState extends State<QuestionDetailScreen> {
                 ),
               ),
               
-              // Resultado das conversões
               if (_mostrarResultadoConversao) ...[
                 const SizedBox(height: 16),
                 const Text(
@@ -791,7 +760,6 @@ class _QuestionDetailScreenState extends State<QuestionDetailScreen> {
               const SizedBox(height: 24),
             ],
 
-            // Exemplo da questão 5 (interface interativa)
             if (widget.question.id == 5) ...[
               const Text(
                 'Digite um número para verificar se é par ou ímpar:',
@@ -802,7 +770,6 @@ class _QuestionDetailScreenState extends State<QuestionDetailScreen> {
               ),
               const SizedBox(height: 16),
               
-              // Campo de entrada
               Card(
                 elevation: 2,
                 child: Padding(
@@ -846,7 +813,6 @@ class _QuestionDetailScreenState extends State<QuestionDetailScreen> {
                 ),
               ),
               
-              // Resultado da verificação par/ímpar
               if (_mostrarResultadoParImpar) ...[
                 const SizedBox(height: 16),
                 const Text(
@@ -878,7 +844,6 @@ class _QuestionDetailScreenState extends State<QuestionDetailScreen> {
               const SizedBox(height: 24),
             ],
 
-            // Exemplo da questão 6 (interface interativa - Switch Case)
             if (widget.question.id == 6) ...[
               const Text(
                 'Digite um dia da semana:',
@@ -889,7 +854,6 @@ class _QuestionDetailScreenState extends State<QuestionDetailScreen> {
               ),
               const SizedBox(height: 16),
               
-              // Campo de entrada
               Card(
                 elevation: 2,
                 child: Padding(
@@ -932,7 +896,6 @@ class _QuestionDetailScreenState extends State<QuestionDetailScreen> {
                 ),
               ),
               
-              // Resultado do switch case
               if (_mostrarResultadoSwitchCase) ...[
                 const SizedBox(height: 16),
                 const Text(
@@ -964,7 +927,6 @@ class _QuestionDetailScreenState extends State<QuestionDetailScreen> {
               const SizedBox(height: 24),
             ],
 
-            // Exemplo da questão 7 (Loop for - execução direta)
             if (widget.question.id == 7) ...[
               const Text(
                 'Clique no botão para executar o loop for:',
@@ -975,7 +937,6 @@ class _QuestionDetailScreenState extends State<QuestionDetailScreen> {
               ),
               const SizedBox(height: 16),
               
-              // Botão para executar o loop
               Card(
                 elevation: 2,
                 child: Padding(
@@ -1056,7 +1017,6 @@ class _QuestionDetailScreenState extends State<QuestionDetailScreen> {
                 ),
               ),
               
-              // Resultado do loop for
               if (_mostrarResultadoLoopFor) ...[
                 const SizedBox(height: 16),
                 const Text(
@@ -1088,7 +1048,6 @@ class _QuestionDetailScreenState extends State<QuestionDetailScreen> {
               const SizedBox(height: 24),
             ],
 
-            // Exemplo da questão 8 (Loop while - execução direta)
             if (widget.question.id == 8) ...[
               const Text(
                 'Clique no botão para executar o loop while:',
@@ -1099,7 +1058,6 @@ class _QuestionDetailScreenState extends State<QuestionDetailScreen> {
               ),
               const SizedBox(height: 16),
               
-              // Botão para executar o loop
               Card(
                 elevation: 2,
                 child: Padding(
@@ -1180,7 +1138,6 @@ class _QuestionDetailScreenState extends State<QuestionDetailScreen> {
                 ),
               ),
               
-              // Resultado do loop while
               if (_mostrarResultadoLoopWhile) ...[
                 const SizedBox(height: 16),
                 const Text(
@@ -1212,7 +1169,6 @@ class _QuestionDetailScreenState extends State<QuestionDetailScreen> {
               const SizedBox(height: 24),
             ],
 
-            // Exemplo da questão 9 (Lista Simples - execução direta)
             if (widget.question.id == 9) ...[
               const Text(
                 'Clique no botão para executar o exemplo de lista:',
@@ -1301,7 +1257,6 @@ class _QuestionDetailScreenState extends State<QuestionDetailScreen> {
                 ),
               ),
               
-              // Resultado da lista
               if (_mostrarResultadoLista) ...[
                 const SizedBox(height: 16),
                 const Text(
@@ -1333,7 +1288,6 @@ class _QuestionDetailScreenState extends State<QuestionDetailScreen> {
               const SizedBox(height: 24),
             ],
 
-            // Exemplo da questão 10 (Mapa/Dicionário - execução direta)
             if (widget.question.id == 10) ...[
               const Text(
                 'Clique no botão para executar o exemplo de mapa (dicionário):',
@@ -1425,7 +1379,6 @@ class _QuestionDetailScreenState extends State<QuestionDetailScreen> {
                 ),
               ),
               
-              // Resultado do mapa
               if (_mostrarResultadoMapa) ...[
                 const SizedBox(height: 16),
                 const Text(
@@ -1459,7 +1412,6 @@ class _QuestionDetailScreenState extends State<QuestionDetailScreen> {
             
             const SizedBox(height: 24),
             
-            // Botão de navegação
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(

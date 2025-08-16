@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import '../constants/app_constants.dart';
 
 class AppUtils {
-  /// Retorna a cor correspondente ao nível de dificuldade
   static Color getDifficultyColor(String difficulty) {
     switch (difficulty) {
       case 'Fácil':
@@ -16,7 +15,6 @@ class AppUtils {
     }
   }
 
-  /// Retorna o ícone correspondente ao nível de dificuldade
   static IconData getDifficultyIcon(String difficulty) {
     switch (difficulty) {
       case 'Fácil':
@@ -30,7 +28,6 @@ class AppUtils {
     }
   }
 
-  /// Retorna um widget Container estilizado para chips
   static Widget buildChip({
     required String text,
     required Color backgroundColor,
@@ -52,7 +49,6 @@ class AppUtils {
     );
   }
 
-  /// Cria um chip de categoria
   static Widget buildCategoryChip(String category) {
     return buildChip(
       text: category,
@@ -61,7 +57,6 @@ class AppUtils {
     );
   }
 
-  /// Cria um chip de dificuldade
   static Widget buildDifficultyChip(String difficulty) {
     final color = getDifficultyColor(difficulty);
     return buildChip(
@@ -71,7 +66,6 @@ class AppUtils {
     );
   }
 
-  /// Mostra um SnackBar personalizado
   static void showCustomSnackBar(BuildContext context, String message) {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
@@ -85,7 +79,6 @@ class AppUtils {
     );
   }
 
-  /// Navega para uma nova tela com animação
   static void navigateToScreen(BuildContext context, Widget screen) {
     Navigator.push(
       context,
